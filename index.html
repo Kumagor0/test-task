@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.0/angular.min.js"></script>
+  <script src="dirPagination.js"></script>
+  <script src="index.js"></script>
+</head>
+<body>
+	<div ng-app="App">
+		<div ng-controller="MainController">
+		    <div style="font-size: large">
+		    	{{numbersSum}}
+		    </div>
+		    <br><br><br>
+			<div>
+				<span dir-paginate="n in sortedNumbers | itemsPerPage: pageSize" current-page="currentPage" ng-click="numberClick(n.numberOnPage, currentPage)" class="{{n.style}}">{{n.value}} </span>
+			</div>
+		    <dir-pagination-controls ></dir-pagination-controls>
+		</div>
+	</div>
+</body>
+</html>
+
+
