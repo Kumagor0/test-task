@@ -17,7 +17,7 @@
 		    </div>
 		    <br><br><br>
 			<div>
-				<span dir-paginate="n in sortedNumbers | itemsPerPage: pageSize" current-page="currentPage" ng-click="numberClick(n.numberOnPage, currentPage)" class="{{n.style}}">{{n.value}} </span>
+				<span dir-paginate="n in sortedNumbers | itemsPerPage: pageSize" current-page="currentPage" ng-click="numberClick(n.numberOnPage, currentPage)" ng-class="{'used': n.style == 'used'}">{{n.value}} </span>
 			</div>
 		    <dir-pagination-controls ></dir-pagination-controls>
 		</div>
